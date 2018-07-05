@@ -11,3 +11,7 @@ msg = MIMEMultipart()
 msg['From'] = your_addrs
 msg['To'] = tothesent_addrs
 msg['Subject'] = "Reminder:"
+
+body = "TESTING EMAIL"
+msg.attach(MIMEText(body, 'plain'))
+
