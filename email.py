@@ -10,12 +10,14 @@ msg['From'] = your_addrs
 msg['To'] = tothesent_addrs
 msg['Subject'] = "Reminder:"
 
-body = "TESTING EMAIL"
-msg.attach(MIMEText(body, 'plain'))
 
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
-server.login(your_addrs, "PASSWORD")
-text = msg.as_string()
-server.sendmail(your_addrs, tothesent_addrs, text)
-server.quit()
+if ((datetime.date.today().strftime('%A') == 'Saturday') and (atetime.datetime.now().time() == '22:26:00.000000') ):
+    body = "TESTING EMAIL"
+    msg.attach(MIMEText(body, 'plain'))
+
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(your_addrs, "lahore101")
+    text = msg.as_string()
+    server.sendmail(your_addrs, tothesent_addrs, text)
+    server.quit()
