@@ -11,13 +11,14 @@ msg['To'] = tothesent_addrs
 msg['Subject'] = "Reminder:"
 
 
-if ((datetime.date.today().strftime('%A') == 'Saturday') and (atetime.datetime.now().time() == '22:26:00.000000') ):
-    body = "TESTING EMAIL"
-    msg.attach(MIMEText(body, 'plain'))
+while True:
+    if ((datetime.date.today().strftime('%A') == 'Sunday') and ((datetime.datetime.now().time().strftime('%H') == '23') and (datetime.datetime.now().time().strftime('%M') == '50') and (datetime.datetime.now().time().strftime('%S') == '01')) ):
+        body = "TESTING EMAIL"
+        msg.attach(MIMEText(body, 'plain'))
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(your_addrs, "lahore101")
+        text = msg.as_string()
+        server.sendmail(your_addrs, tothesent_addrs, text)
+        server.quit()
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(your_addrs, "lahore101")
-    text = msg.as_string()
-    server.sendmail(your_addrs, tothesent_addrs, text)
-    server.quit()
