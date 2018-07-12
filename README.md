@@ -1,1 +1,1 @@
-Email Alert script - Under work right now
+Email Alert script - Python script that sends an email(ALERT) to any given address through the provided user email credentials(only provided gmail port-can be changed to different service providers port).Capable of running as a desktop and server script-currently being worked on for scalability.
