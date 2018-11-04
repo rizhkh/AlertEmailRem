@@ -17,7 +17,7 @@ while True:
         msg.attach(MIMEText(body, 'plain'))
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
-        server.login(your_addrs, "lahore101")
+        server.login(your_addrs, "YourPASSWORD")
         text = msg.as_string()
         server.sendmail(your_addrs, tothesent_addrs, text)
         server.quit()
